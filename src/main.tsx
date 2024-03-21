@@ -1,9 +1,12 @@
 import ReactDOM from "react-dom/client";
-import { FieldGenerator } from "../";
 import React from "react";
+import { FieldGeneratorProvider } from "../lib/provider";
+import { FieldGenerator } from "../lib/field-generator";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <FieldGenerator fieldKey="name" />
+    <FieldGeneratorProvider library={"react-hook-form"}>
+      <FieldGenerator fieldKey="name" />
+    </FieldGeneratorProvider>
   </React.StrictMode>
 );

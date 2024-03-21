@@ -1,8 +1,13 @@
+import { FieldGeneratorContext } from "./context";
+import { useContext } from "react";
+
 interface FieldGeneratorProps {
   fieldKey: string;
 }
 
 export function FieldGenerator(props: FieldGeneratorProps) {
+  const { library } = useContext(FieldGeneratorContext);
+  console.log(library);
   switch (props.fieldKey) {
     case "name":
       return <input type="text" />;
